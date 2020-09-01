@@ -1,6 +1,6 @@
 # MediaRenamer
 
-I developed this tool as one of my first Python projects, as it may be very buggy and incomplete.
+**DISCLAIMER: I developed this tool as one of my first Python projects, as it may be very buggy and incomplete.**
 
 This is a small tool to scrape meta-data of individual TV-Show seasons on IMDb and rename files in the working directory 
 accordingly.
