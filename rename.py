@@ -1,5 +1,3 @@
-# newest iteration
-
 from time import localtime
 from time import strftime
 import os
@@ -8,8 +6,10 @@ import urllib.request
 import string
 from bs4 import BeautifulSoup
 
-# site = 'https://www.imdb.com/title/tt0182576/episodes?season=1'
+# Settings
+log_location = '/home/anders/binaries/rename/log/FileMove.log'
 
+# Take input from terminal session - needs to be run interactively in shell
 site = input('URL: ')
 file_extension = input('Extension (without . ): ')
 
@@ -110,9 +110,10 @@ def number_conv(n):
 extract_dict, extract_show = extract_data(download_data(site))
 
 
-file = open('/home/anders/binaries/rename/log/FileMove.log', 'a')
+log_file = open(log_location, 'a')
 
-for logentry in file_operations_and_checks():
-    file.writelines(logentry)
-    file.writelines('\n')
-file.close()
+for log_entry in file_operations_and_checks():
+    log_file.writelines(log_entry)
+    log_file.writelines('\n')
+
+log_file.close()
