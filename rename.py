@@ -6,8 +6,11 @@ import urllib.request
 import string
 from bs4 import BeautifulSoup
 
+
 # Settings
+log_enabled = True
 log_location = '/home/anders/binaries/rename/log/FileMove.log'
+
 
 # Take input from terminal session - needs to be run interactively in shell
 site = input('URL: ')
@@ -110,10 +113,14 @@ def number_conv(n):
 extract_dict, extract_show = extract_data(download_data(site))
 
 
-log_file = open(log_location, 'a')
+if log_enabled:
+    log_file = open(log_location, 'a')
 
-for log_entry in file_operations_and_checks():
-    log_file.writelines(log_entry)
-    log_file.writelines('\n')
+    for log_entry in file_operations_and_checks():
+        log_file.writelines(log_entry)
+        log_file.writelines('\n')
 
-log_file.close()
+    log_file.close()
+
+else:
+    file_operations_and_checks()
