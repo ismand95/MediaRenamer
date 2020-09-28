@@ -1,0 +1,6 @@
+name: MediaRenamer
+channels:
+  - defaults
+dependencies:
+  - html5lib
+  - beautifulsoup4
